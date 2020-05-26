@@ -9,9 +9,8 @@ public class MyController {
 	private RestTemplate restTemplate = new RestTemplate();
 
 	@GetMapping(value = "/basic-java")
-	public String rule() {
+	public Boolean rule() {
 		String url = "http://localhost:8090/task";
-		restTemplate.getForObject(url, Boolean.TYPE);
-		return "done";
+		return restTemplate.getForObject(url, Boolean.TYPE);
 	}
 }
